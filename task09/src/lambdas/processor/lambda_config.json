@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "name": "processor",
+  "func_name": "handler.lambda_handler",
+  "resource_type": "lambda",
+  "iam_role_name": "processor-role",
+  "runtime": "python3.10",
+  "memory": 128,
+  "timeout": 100,
+  "tracing_mode": "Active",
+  "lambda_path": "lambdas/processor",
+  "dependencies": [
+    {
+      "resource_name": "Weather",
+      "resource_type": "dynamodb_table"
+    }
+  ],
+  "event_sources": [],
+  "env_variables": {
+    "table_name": "Weather"
+  },
+  "publish_version": false,
+  "url_config": {
+    "auth_type": "NONE"
+  },
+  "ephemeral_storage": 512,
+  "logs_expiration": "${logs_expiration}"
+}

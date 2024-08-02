@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "name": "audit_producer",
+  "func_name": "handler.lambda_handler",
+  "resource_type": "lambda",
+  "iam_role_name": "audit_producer-role",
+  "runtime": "python3.10",
+  "memory": 128,
+  "timeout": 100,
+  "lambda_path": "lambdas/audit_producer",
+  "dependencies": [
+    {
+      "resource_name": "Configuration",
+      "resource_type": "dynamodb_table"
+    }
+  ],
+  "event_sources": [
+    {
+      "resource_type": "dynamodb_trigger",
+      "target_table": "Configuration",
+      "batch_size": 1
+    }
+  ],
+  "env_variables": {
+    "audit_table": "Audit"
+  },
+  "publish_version": false,
+  "url_config": {},
+  "ephemeral_storage": 512,
+  "logs_expiration": "${logs_expiration}"
+}
