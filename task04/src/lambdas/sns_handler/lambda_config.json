@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "name": "sns_handler",
+  "func_name": "handler.lambda_handler",
+  "resource_type": "lambda",
+  "iam_role_name": "sns_handler-role",
+  "runtime": "python3.10",
+  "memory": 128,
+  "timeout": 100,
+  "lambda_path": "lambdas/sns_handler",
+  "dependencies": [
+    {
+      "resource_name": "lambda_topic",
+      "resource_type": "sns_topic"
+    }
+  ],
+  "event_sources": [
+    {
+      "resource_type": "sns_topic_trigger",
+      "target_topic": "lambda_topic",
+      "region": "eu-central-1"
+    }
+  ],
+  "env_variables": {},
+  "publish_version": false,
+  "url_config": {},
+  "ephemeral_storage": 512,
+  "logs_expiration": "${logs_expiration}"
+}
