@@ -30,9 +30,6 @@
     "custom_policies": [
       "lambda-basic-execution"
     ],
-    "resource_type": "iam_role",
-    "allowed_accounts": [
-      "${account_id}"
-    ]
+    "resource_type": "iam_role"
   }
 }

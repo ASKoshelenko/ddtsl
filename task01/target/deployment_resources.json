@@ -1,0 +1,23 @@
+{
+  "hello_world" : {
+    "name" : "hello_world",
+    "lambda_path" : "/home/koshelenko/Документы/temp/Serverless/ddtsl/task01",
+    "version" : "1.0.0",
+    "func_name" : "com.task01.HelloWorld",
+    "deployment_package" : "task01-1.0.0.jar",
+    "resource_type" : "lambda",
+    "runtime" : "java11",
+    "architectures" : [ "x86_64" ],
+    "iam_role_name" : "hello_world-role",
+    "memory" : 1024,
+    "timeout" : 300,
+    "subnet_ids" : [ ],
+    "security_group_ids" : [ ],
+    "dependencies" : [ ],
+    "event_sources" : [ ],
+    "env_variables" : { },
+    "publish_version" : true,
+    "alias" : "${lambdas_alias_name}",
+    "snap_start" : "None"
+  }
+}
